@@ -6,7 +6,7 @@
 #    By: frenna <frenna@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/04 22:20:11 by ddamaris          #+#    #+#              #
-#    Updated: 2019/10/15 14:58:53 by frenna           ###   ########.fr        #
+#    Updated: 2019/10/17 10:20:27 by frenna           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,15 +20,19 @@ SRCS= ft_bzero.c ft_putchar.c ft_putstr.c ft_strncat.c ft_strchr.c \
 
 OBJ=$(SRCS:%.c=%.o)
 
-all:
-	gcc  $(GCCFLAGS) -c $(SRCS)
+all: $(NAME)
+
+$(NAME): $(OBJ)
 	ar -rv $(NAME) $(OBJ)
 	ranlib $(NAME)
 
+$(OBJ):
+	gcc  $(GCCFLAGS) -c $(SRCS)
+
 clean:
-	/bin/rm -f *.o
+	rm -f $(OBJ)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all

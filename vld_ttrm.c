@@ -6,7 +6,7 @@
 /*   By: frenna <frenna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 16:36:09 by ddamaris          #+#    #+#             */
-/*   Updated: 2019/10/16 14:52:48 by frenna           ###   ########.fr       */
+/*   Updated: 2019/10/16 14:57:57 by frenna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int g_vld[19][6] = {{1, 0, 2, 0, 3, 0}, {0, 1, 0, 2, 0, 3},
 	{0, 1, 1, -1, 1, 0}, {1, 0, 1, 1, 2, 1}, {0, 1, 1, 1, 1, 2},
 	{1, -1, 1, 0, 2, -1}, {0, 1, 1, 0, 1, 1}};
 
-int	map_size(char *map)
+int		map_size(char *map)
 {
 	int	i;
 
@@ -30,7 +30,7 @@ int	map_size(char *map)
 	return (i);
 }
 
-int	*ft_strintdup(int *s1, int n)
+int		*ft_strintdup(int *s1, int n)
 {
 	int	*dup;
 	int	i;
@@ -47,7 +47,7 @@ int	*ft_strintdup(int *s1, int n)
 	return (dup);
 }
 
-int	*vld_ttrm(char *s)
+int		*vld_ttrm(char *s)
 {
 	int i;
 

@@ -6,7 +6,7 @@
 /*   By: frenna <frenna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 13:51:22 by ddamaris          #+#    #+#             */
-/*   Updated: 2019/10/16 14:53:37 by frenna           ###   ########.fr       */
+/*   Updated: 2019/10/17 09:50:42 by frenna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ int	main(int ac, char **av)
 	char	buf[BUFF_SIZE];
 	int		**tt_list;
 
-	//clock_t begin = clock();
 	if (ac != 2)
 	{
 		ft_putstr("usage: fillit input_file\n");
@@ -71,8 +70,5 @@ int	main(int ac, char **av)
 	tt_list = make_list(buf, (rd + 1) / 21);
 	make_map(tt_list, (rd + 1) / 21);
 	free_list(tt_list, (rd + 1) / 21 - 1);
-//	clock_t end = clock();
-//	double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
-//	printf("%f\n", time_spent);
 	return (0);
 }
