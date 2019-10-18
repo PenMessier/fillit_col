@@ -6,7 +6,7 @@
 /*   By: frenna <frenna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 18:13:15 by ddamaris          #+#    #+#             */
-/*   Updated: 2019/10/18 11:07:52 by frenna           ###   ########.fr       */
+/*   Updated: 2019/10/18 11:11:44 by frenna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,6 @@ int		make_map(int **tt_list, int nb)
 		ms++;
 		map = map_init(ms);
 	}
-	ft_putstr(map);
+	print_colors(map);
 	return (0);
 }
