@@ -6,7 +6,7 @@
 /*   By: frenna <frenna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 16:36:09 by ddamaris          #+#    #+#             */
-/*   Updated: 2019/10/16 14:57:57 by frenna           ###   ########.fr       */
+/*   Updated: 2019/10/18 10:39:10 by frenna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,25 +69,25 @@ int		checker(char *bf)
 {
 	int	i;
 	int	n;
+	int d;
+	int h;
 
-	i = 0;
-	n = 0;
-	if (bf[20] && bf[20] != '\n')
-		return (0);
-	while (i < 20)
+	while (*bf != '\0')
 	{
-		if (!((i + 1) % 5))
+		i = 0;
+		n = 0;
+		d = 0;
+		h = 0;
+		while (i < 20)
 		{
-			if (bf[i] != '\n')
-				return (0);
+			h += (bf[i] == '#') ? 1 : 0;
+			d += (bf[i] == '.') ? 1 : 0;
+			n += (bf[i++] == '\n') ? 1 : 0;
 		}
-		else if (!(bf[i] == '#' || bf[i] == '.'))
+		if (!(n == 4 && h == 4 && d == 12) ||
+			!(bf[i] == '\n' || bf[i] == '\0'))
 			return (0);
-		if (bf[i] == '#')
-			n++;
-		i++;
+		bf = bf + 21;
 	}
-	if (n != 4)
-		return (0);
 	return (1);
 }
